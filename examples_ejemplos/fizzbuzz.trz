@@ -1,0 +1,14 @@
+func main -> int {
+    para (entero i = 1; i <= 20; i = i + 1) {
+        si (i % 15 == 0) {
+            imprimir("FizzBuzz");
+        } elif (i % 3 == 0) {
+            print("Fizz");
+        } sino_si (i % 5 == 0) {
+            imprimir("Buzz");
+        } else {
+            print(i);
+        }
+    }
+    return 0;
+}

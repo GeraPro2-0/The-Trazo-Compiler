@@ -1,0 +1,52 @@
+# Build output
+/bin/
+/build/
+
+# Generated object files and executables
+*.o
+*.obj
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.dylib
+*.pdb
+*.ilk
+*.lo
+*.la
+
+# Editor and OS metadata
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Radar parser build artifacts
+radar/radarparse
+radar/radarparse.exe
+radar/*.o
+
+# Jansson build directories
+radar/cJSON-1.7.19/build/
+radar/cJSON-1.7.19/.libs/
+
+# Misc
+*.log
+*.log.*
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# Legacy or external directories not part of current source
+Legacy/
+OpenBLAS/
+LLVM/
+
+# My stuff
+HISTORIAL.md
+LECCIONES.md
+mingw64.lnk

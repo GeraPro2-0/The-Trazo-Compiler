@@ -1,0 +1,9 @@
+func main -> int {
+    string name = input("Enter your name: ");
+    print("Hello,", name);
+
+    string age_string = input("Enter your age: ");
+    print("You entered age:", age_string);
+
+    return 0;
+}

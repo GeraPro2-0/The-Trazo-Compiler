@@ -1,0 +1,12 @@
+estructura Punto {
+    entero x;
+    entero y;
+}
+
+funcion main -> entero {
+    Punto p = make_struct();
+    p.x = 10;
+    p.y = 20;
+    imprimir("Punto:", p.x, p.y);
+    retornar 0;
+}

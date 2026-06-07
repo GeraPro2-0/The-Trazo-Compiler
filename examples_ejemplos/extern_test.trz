@@ -1,0 +1,17 @@
+extern int puts(string text);
+extern int strlen(string text);
+extern string getenv(string name);
+
+unsafe.MAX func main -> int {
+    string user = getenv("USERNAME");
+    if (user == null) {
+        user = "unknown";
+    }
+
+    print("Hello", user);
+    print("username length:", strlen(user));
+    print("sizeof(int):", sizeof(int));
+    print("sizeof(float*):", sizeof(float*));
+    puts("extern puts called");
+    return 0;
+}

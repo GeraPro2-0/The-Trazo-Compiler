@@ -1,0 +1,12 @@
+estructura Perfil {
+    entero edad;
+    cadena nombre;
+}
+
+funcion main -> entero {
+    Perfil persona = make_struct();
+    persona.edad = 31;
+    persona.nombre = "Rosa";
+    imprimir("Perfil:", persona.nombre, persona.edad);
+    retornar 0;
+}

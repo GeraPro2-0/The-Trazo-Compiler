@@ -1,0 +1,13 @@
+funcion main -> entero {
+    entero numeros = [1, 2, 3];
+    print("length:", longitud(numeros));
+    empujar(numeros, 4);
+    print("after push:", longitud(numeros));
+
+    cadena nombre = "Trazo";
+    nuevo_estructura perfil = make_struct();
+    perfil.nombre = nombre;
+    perfil.edad = 5;
+    print("perfil:", perfil.nombre, perfil.edad);
+    retornar 0;
+}

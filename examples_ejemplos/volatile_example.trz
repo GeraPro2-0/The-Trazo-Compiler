@@ -1,0 +1,7 @@
+funcion main -> entero {
+    volatil entero contador = 100;
+    imprimir("contador inicial:", contador);
+    contador = contador + 5;
+    imprimir("contador final:", contador);
+    retornar 0;
+}

@@ -1,0 +1,9 @@
+funcion saludo(cadena ohh) {
+    imprimir("This", ohh);
+}
+
+func main -> entero {
+    cadena ohh = "works";
+    saludo(ohh);
+    retornar 0;
+}

@@ -1,0 +1,135 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  native-build:
+    name: Native build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install build tools on Linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: Build Trazo
+        run: |
+          make
+        shell: bash
+
+      - name: Run smoke test
+        run: |
+          if [ -f ./bin/Trazo.exe ]; then
+            ./bin/Trazo.exe examples_ejemplos/hello_world.trz
+          elif [ -f ./bin/Trazo ]; then
+            ./bin/Trazo examples_ejemplos/hello_world.trz
+          elif [ -f ./Trazo ]; then
+            ./Trazo examples_ejemplos/hello_world.trz
+          fi
+        shell: bash
+
+      - name: Prepare artifact directory structure
+        run: |
+          VERSION="${{ github.ref_name }}"
+          if [[ ! "$VERSION" =~ ^v[0-9] ]]; then
+            VERSION="v0.1.0-alpha"
+          fi
+          
+          DIR_NAME="Trazo-${VERSION}-${{ matrix.os }}"
+          mkdir -p "dist/${DIR_NAME}"
+          
+          # Buscar el binario dinámicamente donde lo haya dejado el Makefile
+          if [ -f ./bin/Trazo.exe ]; then
+            cp bin/Trazo.exe "dist/${DIR_NAME}/"
+          elif [ -f ./bin/Trazo ]; then
+            cp bin/Trazo "dist/${DIR_NAME}/"
+          elif [ -f ./Trazo ]; then
+            cp Trazo "dist/${DIR_NAME}/"
+          fi
+          
+          echo "DIR_NAME=${DIR_NAME}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Upload native artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: binarios-${{ matrix.os }}
+          # Subimos el contenido INTERNO de la carpeta para evitar conflictos
+          path: dist/${{ env.DIR_NAME }}/
+          if-no-files-found: error
+
+  publish-prerelease:
+    name: Create GitHub Pre-Release
+    needs: [native-build]
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./artifacts-to-publish
+
+      - name: Prepare assets for release
+        run: |
+          mkdir ./release-assets
+          
+          VERSION="${{ github.ref_name }}"
+          if [[ ! "$VERSION" =~ ^v[0-9] ]]; then
+            VERSION="v0.1.0-alpha"
+          fi
+          
+          # Iterar sobre cada carpeta de artefacto descargada
+          cd ./artifacts-to-publish
+          for os_dir in binarios-*; do
+            [ -d "$os_dir" ] || continue
+            
+            # Extraer el nombre del OS (ej. macos-latest)
+            OS_NAME="${os_dir#binarios-}"
+            FOLDER_NAME="Trazo-${VERSION}-${OS_NAME}"
+            
+            # Crear la estructura de carpeta limpia antes de comprimir
+            mkdir -p "$FOLDER_NAME"
+            cp -r "$os_dir"/* "$FOLDER_NAME/"
+            
+            echo "Archiving: $FOLDER_NAME"
+            if [[ "$OS_NAME" == *"windows"* ]]; then
+              zip -r "../release-assets/${FOLDER_NAME}.zip" "$FOLDER_NAME"
+            else
+              # Preservar permisos de ejecución para Linux y macOS
+              tar -czf "../release-assets/${FOLDER_NAME}.tar.gz" "$FOLDER_NAME"
+            fi
+          done
+          
+          cd ..
+          ls -la ./release-assets
+        shell: bash
+
+      - name: Create Pre-Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./release-assets/*
+          prerelease: true
+          generate_release_notes: true
+          name: "Trazo ${{ github.ref_name }} Pre-Release"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

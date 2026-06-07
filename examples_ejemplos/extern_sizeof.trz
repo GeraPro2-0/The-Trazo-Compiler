@@ -1,0 +1,16 @@
+externo entero puts(cadena text);
+externo entero strlen(cadena text);
+externo cadena getenv(cadena name);
+
+funcion main -> entero {
+    cadena user = getenv("USERNAME");
+    si (user == nulo) {
+        user = "Desconocido";
+    }
+
+    puts("extern puts called");
+    print("strlen(user)=", strlen(user));
+    print("tamano_de(entero)=", tamano_de(entero));
+    print("tamano_de(cadena*)=", tamano_de(cadena*));
+    retornar 0;
+}

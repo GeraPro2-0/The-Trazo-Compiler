@@ -1,0 +1,11 @@
+// El clásico
+funcion main -> entero {
+    imprimir("¡Hola, Mundo!");
+    retornar 0;
+    
+}
+/*
+Esto
+es
+DIVERTIDO
+*/

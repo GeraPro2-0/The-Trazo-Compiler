@@ -1,0 +1,17 @@
+func main -> entero {
+    bool x = true;
+    booleano y = falso;
+
+    if (x == true) {
+        print("OK");
+    } else {
+        print("OKn't");
+    }
+
+    si (y == verdadero) {
+        imprimir("Bien");
+    } sino {
+        imprimir("Bien't");
+    }
+    return 0;
+}

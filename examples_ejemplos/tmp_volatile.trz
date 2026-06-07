@@ -1,0 +1,4 @@
+funcion main -> entero {
+    volatil entero contador = 100;
+    retornar 0;
+}

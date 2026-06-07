@@ -1,0 +1,56 @@
+externo entero puts(cadena texto);
+
+estructura Punto {
+    entero x;
+    entero y;
+}
+
+funcion main -> entero {
+    cadena saludo = "Galeria de keywords";
+    imprimir(saludo);
+
+    volatil entero contador = 1;
+    si (contador == 1) {
+        imprimir("si / sino branch");
+    } sino_si (contador == 2) {
+        imprimir("sino_si branch");
+    } sino {
+        imprimir("sino branch");
+    }
+
+    mientras (contador < 3) {
+        contador = contador + 1;
+        continuar;
+    }
+
+    para (entero i = 0; i < 2; i = i + 1) {
+        imprimir("para loop", i);
+    }
+
+    cadena texto = "Trazo";
+    entero largo = tamano_de(cadena);
+    imprimir("tamano_de(cadena)=", largo);
+
+    entero* memoria = reservar(16);
+    llenmem(memoria, 0, 16);
+    comparmem(memoria, memoria, 16);
+    liberar(memoria);
+
+    entero* memoria2 = asignar_cero(4, 4);
+    memoria2 = reasignar(memoria2, 8);
+    eliminar(memoria2);
+
+    Punto p;
+    p.x = 10;
+    p.y = 20;
+    imprimir("Punto:", p.x, p.y);
+
+    si (archivo_existe("examples_ejemplos/keyword_gallery.txt")) {
+        imprimir("archivo ya existe");
+        escribir_archivo("examples_ejemplos/keyword_gallery.txt", "keyword gallery\n");
+        anexar_archivo("examples_ejemplos/keyword_gallery.txt", "otra linea\n");
+    }
+
+    // leer_linea puede leer de stdin
+    retornar 0;
+}

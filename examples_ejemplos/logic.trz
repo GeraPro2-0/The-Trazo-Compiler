@@ -1,0 +1,19 @@
+funcion main -> int {
+    entero x = 10;
+
+    // AND / Y
+    if (x > 5 && x < 20) {
+        print("AND");
+    }
+
+    // OR / O
+    si (x == 10 || x == 40) {
+        imprimir("OR");
+    }
+
+    // NOT / NO
+    if (!(x == 5)) {
+        imprimir("NOT");
+    }
+    retornar 0;
+}

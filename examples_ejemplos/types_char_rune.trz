@@ -1,0 +1,10 @@
+unsafe.MAX func main -> int {
+    char letter = 'A';
+    rune heart = '💝';
+    string text = "Hola, Trazo 🌎";
+
+    print("char:", letter);
+    print("rune:", heart);
+    print("text:", text);
+    return 0;
+}

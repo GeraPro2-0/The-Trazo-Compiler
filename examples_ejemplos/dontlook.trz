@@ -1,0 +1,34 @@
+// I told you not to look >:[
+
+funcion saludar(string nombre) {
+    print("Hola,", nombre);
+}
+
+unsafe.MAX func main -> int {
+    string nombre = "Mundo";
+    saludar(nombre);
+
+    int a = 10;
+    int b = 20;
+    int sum = a + b;
+    print("Sum:", sum);
+
+    int* buffer = malloc(16);
+    memset(buffer, 0, 16);
+    imprimir("Allocated buffer:", buffer);
+    free(buffer);
+
+    int value = 41;
+    int* value_ptr = &value;
+    *value_ptr = 42;
+    print("Pointer value:", value);
+
+    int list = [1, 2, 3];
+    int* second = &list[1];
+    *second = 20;
+    print("Indexed pointer:", list[1]);
+
+    string saludo = "ÑÑÑ";
+    print(saludo);
+    return 0;
+}

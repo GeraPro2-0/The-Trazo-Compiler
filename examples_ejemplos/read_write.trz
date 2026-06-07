@@ -1,0 +1,9 @@
+func main -> int {
+    string path = "examples_ejemplos/test_output.txt";
+    string texto = "Trazo file example\n";
+    escribir_archivo(path, texto);
+
+    string contenido = leer_archivo(path);
+    print("read:", contenido);
+    return 0;
+}

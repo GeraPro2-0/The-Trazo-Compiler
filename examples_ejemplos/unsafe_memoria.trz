@@ -1,0 +1,11 @@
+unsafe.MAX funcion main -> entero {
+    entero value = 42;
+    entero* ptr = &value;
+    *ptr = 99;
+
+    entero* buffer = reservar(64);
+    llenmem(buffer, 0, 64);
+    imprimir("value after pointer update:", value);
+    liberar(buffer);
+    retornar 0;
+}

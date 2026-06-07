@@ -1,0 +1,4 @@
+core/decNumber/** linguist-vendored
+radar/cJSON-1.7.19/** linguist-vendored
+examples_ejemplos/** linguist-vendored
+*Makefile* linguist-documentation

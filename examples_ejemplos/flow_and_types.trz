@@ -1,0 +1,31 @@
+func main -> int {
+    int a = 7;
+    float b = 3.5;
+    string name = "Trazo";
+    bool ready = true;
+
+    print("a=", a, " b=", b, " name=", name, " ready=", ready);
+
+    int sum = a + 5;
+    float ratio = b / 2.0;
+
+    if (sum > 10) {
+        print("sum > 10");
+    } elif (sum == 10) {
+        print("sum == 10");
+    } else {
+        print("sum < 10");
+    }
+
+    int count = 0;
+    while (count < 3) {
+        print("while loop count=", count);
+        count = count + 1;
+    }
+
+    for (int i = 1; i <= 3; i = i + 1) {
+        print("for loop i=", i);
+    }
+
+    return 0;
+}

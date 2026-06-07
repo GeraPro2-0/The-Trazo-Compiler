@@ -1,0 +1,17 @@
+func main -> int {
+    decimal a = 1.5;
+    decimal b = 2.25;
+    decimal total = a + b;
+    print("decimal total=", total);
+
+    dec64 c = 3.14;
+    dec64 d = 1.86;
+    dec64 result = c * d;
+    print("dec64 result=", result);
+
+    if (total > 3.0) {
+        print("high precision decimal math works");
+    }
+
+    return 0;
+}

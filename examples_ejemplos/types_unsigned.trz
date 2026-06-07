@@ -1,0 +1,17 @@
+unsafe.MAX func main -> int {
+    u8 a = 250;
+    u16 b = 1024;
+    u32 c = 100000;
+    u64 d = 123456789012345;
+    byte x = 255;
+
+    print("u8:", a);
+    print("u16:", b);
+    print("u32:", c);
+    print("u64:", d);
+    print("byte:", x);
+
+    u64 sum = a + b + c + d;
+    print("sum:", sum);
+    return 0;
+}

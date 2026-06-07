@@ -1,0 +1,19 @@
+[
+
+{
+    "radar": "0.1.0",
+     "project": {
+       "name": "Trazo",
+       "entry": "main.trz"
+     }
+},
+
+{
+    "radar": "0.1.0",
+     "proyecto": {
+       "nombre": "Trazo",
+       "entrada": "main.trz"
+     }
+}
+
+]

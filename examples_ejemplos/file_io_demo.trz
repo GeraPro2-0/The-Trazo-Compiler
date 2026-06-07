@@ -1,0 +1,16 @@
+func main -> int {
+    string path = "examples_ejemplos/file_example.txt";
+    string content = "Trazo file I/O demo\n";
+
+    write_file(path, content);
+    append_file(path, "Second line\n");
+
+    if (file_exists(path)) {
+        string loaded = read_file(path);
+        print("file contents:", loaded);
+    } else {
+        print("failed to create file:", path);
+    }
+
+    return 0;
+}

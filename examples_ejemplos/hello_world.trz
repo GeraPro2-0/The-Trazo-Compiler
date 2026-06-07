@@ -1,0 +1,10 @@
+// The classic
+func main -> int {
+    print("Hello, World!");
+    return 0;
+}
+/*
+This
+is
+func
+*/
