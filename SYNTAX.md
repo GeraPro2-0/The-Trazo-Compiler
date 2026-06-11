@@ -8,10 +8,8 @@ styles can be mixed, although examples usually keep one style per file.
 
 Trazo supports:
 
-- `//` for single-line comments
-- `#` for single-line comments
-- `/* ... */` for block comments
-- `## ... ###` for hash block comments
+- `//` for single-line comments.
+- `/* ... */` for block comments.
 
 ## Whitespace
 
