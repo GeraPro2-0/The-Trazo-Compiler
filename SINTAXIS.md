@@ -10,9 +10,7 @@ mantienen un solo estilo por archivo.
 Trazo soporta:
 
 - `//` para comentarios de una línea
-- `#` para comentarios de una línea
 - `/* ... */` para comentarios de bloque
-- `## ... ###` para comentarios de bloque con numeral
 
 ## Espacio en Blanco
 
