@@ -1,0 +1,15 @@
+importC <stdio.h>
+
+definirtipo entero Count;
+
+estructura Box {
+    entero value;
+};
+
+Box global_box;
+
+func main() -> int {
+    global_box.value = 91;
+    C.printf("%d\n", global_box.value);
+    return 0;
+}

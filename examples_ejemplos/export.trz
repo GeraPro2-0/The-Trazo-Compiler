@@ -1,0 +1,20 @@
+importC <stdio.h>
+
+export func add(entero left, entero right) -> entero {
+    return left + right;
+}
+
+func private_value() -> entero {
+    return 7;
+}
+
+export estructura Box {
+    entero value;
+};
+
+func main() -> entero {
+    Box box;
+    box.value = add(2, 3);
+    C.printf("%d\n", box.value);
+    return 0;
+}

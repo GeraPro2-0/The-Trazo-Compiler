@@ -1,0 +1,7 @@
+import math
+importC <stdio.h>
+
+func main() -> entero {
+    C.printf("%d\n", add(4, 6));
+    return 0;
+}

@@ -1,0 +1,12 @@
+importC <stdio.h>
+
+func add(int a, entero b) -> int {
+    return a + b;
+}
+
+funcion main() -> entero {
+    int x = 2;
+    entero y = 5;
+    C.printf("%d\n", add(x, y));
+    retornar 0;
+}

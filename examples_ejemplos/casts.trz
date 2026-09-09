@@ -1,0 +1,10 @@
+importC <stdio.h>
+importC <stdlib.h>
+
+func main() -> int {
+    entero *ptr = (entero*) C.malloc(sizeof(entero));
+    *ptr = 73;
+    C.printf("%d\n", *ptr);
+    C.free(ptr);
+    return 0;
+}

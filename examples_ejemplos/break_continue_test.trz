@@ -1,0 +1,25 @@
+importarC <stdio.h>
+
+funcion main() -> int {
+    
+    para (entero i = 0; i < 6; i++) {
+        if (i == 1) {
+            continue;
+        }
+        C.printf("%d\n", i);
+        si (i == 4) {
+            break;
+        }
+    }
+
+    for (int i = 0; i < 8; i++) {
+        si (i == 3) {
+            continuar;
+        }
+        C.printf("%d\n", i);
+        if (i == 7) {
+            romper;
+        }
+    }
+    retornar 0;
+}

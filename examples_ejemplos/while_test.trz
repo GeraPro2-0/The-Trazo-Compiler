@@ -1,0 +1,18 @@
+importC <stdio.h>
+
+funcion main() -> int {
+    entero x = 0;
+
+    // English
+    while (x < 3) {
+        C.printf("%d\n", x);
+        x++;
+    }
+    // Español
+    
+    mientras (x < 6) {
+        C.printf("%d\n", x);
+        x++;
+    }
+    return 0;
+}

@@ -1,0 +1,6 @@
+importarC <stdio.h>
+
+funcion main() -> entero {
+    C.printf("¡Hola, Mundo!\n");
+    retornar 0;
+}

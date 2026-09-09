@@ -1,0 +1,30 @@
+importarC <stdio.h>
+
+funcion main() -> entero {
+    int x = 2;
+    entero y = 1;
+
+    // English
+    switch (x) {
+        case 1:
+            C.printf("one\n");
+            break;
+        case 2:
+            C.printf("two\n");
+            break;
+        default:
+            C.printf("other\n");
+            break;
+    }
+
+    // Español
+    cambiar (y) {
+        caso 1:
+            C.printf("uno\n");
+        caso 2:
+            C.printf("dos\n");
+        pordefecto:
+            C.printf("otro\n");
+    }
+    return 0;
+}

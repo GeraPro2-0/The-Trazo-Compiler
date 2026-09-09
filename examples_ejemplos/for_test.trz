@@ -1,0 +1,15 @@
+importC <stdio.h>
+
+func main() -> int {
+    
+    // English
+    for (int i = 0; i < 3; i++) {
+        C.printf("%d\n", i);
+    }
+
+    // Español
+    para (entero j = 0; j < 0; j++) {
+        C.printf("%d\n", j);
+    }
+    return 0;
+}

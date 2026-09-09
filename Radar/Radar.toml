@@ -1,0 +1,26 @@
+# This is an example of a Radar.toml file for the Trazo project.
+
+[project]
+name = "Trazo"
+authors = ["GeraPro2_0"]
+version = "0.1.0"
+license = "Apache 2.0 WITH LLVM Exception"
+
+[build]
+kind = "program"
+compiler = "auto"
+output = "../bin/Trazo"
+include = ["../Trazocore/src"]
+std-c = "c11"
+
+sources = [
+    "../Trazocore/src/main.c",
+    "../Trazocore/src/lexer.c",
+    "../Trazocore/src/preprocessor.c",
+    "../Trazocore/src/ffi.c",
+    "../Trazocore/src/modules.c",
+    "../Trazocore/src/parser.c",
+    "../Trazocore/src/typechecker.c",
+    "../Trazocore/src/mangle.c",
+    "../Trazocore/src/ccodegen.c"
+]

@@ -1,0 +1,8 @@
+#include <stdio.h>
+#if defined(TARGET)
+#endif
+
+func main() -> entero {
+    C.printf("preprocessor\n");
+    return 0;
+}

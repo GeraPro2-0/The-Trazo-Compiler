@@ -1,0 +1,14 @@
+importarC <stdio.h>
+
+funcion main() -> int {
+    const entero x = 10;
+    static flotante y = 20.4f;
+    volatile caracter z = 'A';
+    C.printf("%d %f %c\n", x, y, z);
+
+    constante int u = 40;
+    estatico float v = 4.3f;
+    volatil char w = 'B';
+    C.printf("%d %f %c\n", u, v, w);
+    return 0;
+}

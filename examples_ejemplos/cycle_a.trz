@@ -1,0 +1,5 @@
+import cycle_b
+
+func a() -> entero {
+    return 1;
+}

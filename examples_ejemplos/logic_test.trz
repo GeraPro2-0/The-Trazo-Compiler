@@ -1,0 +1,21 @@
+importC <stdio.h>
+
+entero x = 10;
+
+funcion main() -> int {
+    // AND / Y
+    if (x > 5 && x < 20) {
+        C.printf("AND\n");
+    }
+
+    // OR / O
+    si (x == 10 || x == 40) {
+        C.printf("OR\n");
+    }
+
+    // NOT / NO
+    if (!(x == 5)) {
+        C.printf("NOT\n");
+    }
+    retornar 0;
+}

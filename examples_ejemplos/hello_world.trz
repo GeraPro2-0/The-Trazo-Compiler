@@ -1,0 +1,6 @@
+importC <stdio.h>
+
+func main() -> int {
+    C.printf("Hello, World!\n");
+    return 0;
+}

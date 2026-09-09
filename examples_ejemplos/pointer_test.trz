@@ -1,0 +1,19 @@
+importC <stdio.h>
+
+func show(entero *value) -> int {
+    C.printf("%d\n", *value);
+    return 0;
+}
+
+func main() -> int {
+    struct Box {
+        entero *value;
+    };
+    entero value = 42;
+    entero *ptr = &value;
+    Box box;
+    box.value = ptr;
+    show(ptr);
+    C.printf("%d\n", *box.value);
+    return 0;
+}

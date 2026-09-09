@@ -1,0 +1,7 @@
+importC <stdio.h>
+
+func main() -> int {
+    entero values[3];
+    C.printf("%zu %zu\n", sizeof(values), sizeof(entero));
+    return 0;
+}

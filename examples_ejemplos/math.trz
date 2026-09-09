@@ -1,0 +1,3 @@
+export func add(entero left, entero right) -> entero {
+    return left + right;
+}

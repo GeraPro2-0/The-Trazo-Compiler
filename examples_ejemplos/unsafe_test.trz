@@ -1,0 +1,11 @@
+importC <stdio.h>
+
+func main() -> int {
+    unsafe {
+        C.printf("unsafe block accepted\n");
+    }
+    inseguro {
+        C.printf("bloque inseguro, también aceptado\n")
+    }
+    return 0;
+}

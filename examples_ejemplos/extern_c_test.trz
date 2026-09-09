@@ -1,0 +1,53 @@
+importC <stdio.h>
+
+extern "C" func c_entry(int value) -> int {
+    return value + 1;
+}
+
+externo "C" funcion c_double(entero valor) -> entero {
+    retornar valor + valor;
+}
+
+extern "C" func c_scale(float value) -> float {
+    return value + value;
+}
+
+func trazo_entry(int valor) -> int {
+    retornar valor + 2;
+}
+
+funcion trazo_offset(entero valor) -> entero {
+    retornar valor + 3;
+}
+
+func sum(int left, int right) -> int {
+    return left + right;
+}
+
+func sum(float left, float right) -> float {
+    return left + right;
+}
+
+funcion sumar(entero izquierdo, entero derecho) -> entero {
+    retornar izquierdo + derecho;
+}
+
+funcion sumar(flotante izquierdo, flotante derecho) -> flotante {
+    retornar izquierdo + derecho;
+}
+
+func main() -> int {
+    int from_c_abi = c_entry(10);
+    int from_trazo = trazo_entry(20);
+    entero from_c_abi_es = c_double(5);
+    flotante scaled = c_scale(1.5f);
+    int sum_int = sum(1, 2);
+    float sum_float = sum(1.5f, 2.5f);
+    entero sumar_entero = sumar(3, 4);
+    flotante sumar_flotante = sumar(2.5f, 3.5f);
+    entero from_trazo_es = trazo_offset(30);
+    C.printf("C ABI: %d, %d, %.1f; Trazo: %d, %d, %d, %.1f, %d, %.1f\n",
+             from_c_abi, from_c_abi_es, scaled, from_trazo, from_trazo_es,
+             sum_int, sum_float, sumar_entero, sumar_flotante);
+    return 0;
+}

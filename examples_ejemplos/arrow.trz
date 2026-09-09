@@ -1,0 +1,13 @@
+importC <stdio.h>
+
+struct Box {
+    entero value;
+};
+
+func main() -> entero {
+    Box box;
+    Box *ptr = &box;
+    ptr->value = 37;
+    C.printf("%d\n", ptr->value);
+    return 0;
+}

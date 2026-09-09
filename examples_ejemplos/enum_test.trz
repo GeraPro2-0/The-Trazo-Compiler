@@ -1,0 +1,11 @@
+importarC <stdio.h>
+
+funcion main() -> int {
+    enum Color { RED, GREEN };
+    enumeracion Dia { LUNES, MARTES };
+
+    int color = RED;
+    entero dia = LUNES;
+    C.printf("%d %d\n", color, dia);
+    return 0;
+}

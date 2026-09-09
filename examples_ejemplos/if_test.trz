@@ -1,0 +1,21 @@
+importC <stdio.h>
+
+int x = 5;
+
+func main() -> entero {
+
+    // English
+    if (x > 3) {
+        C.printf("ok\n");
+    } else {
+        C.printf("no\n");
+    }
+    
+    // Español
+    si (x < 2) {
+        C.printf("no, wey\n");
+    } else {
+        C.printf("si, wey\n");
+    }
+    return 0;
+}

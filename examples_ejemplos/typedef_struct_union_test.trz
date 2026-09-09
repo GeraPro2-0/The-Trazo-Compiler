@@ -1,0 +1,39 @@
+importC <stdio.h>
+
+funcion main() -> int {
+    typedef int Number;
+    definirtipo float Decimal;
+
+    struct Heroe {
+        entero age;
+        int puntos;
+    };
+
+    estructura Villain {
+        float hp;
+        flotante ki;
+    };
+
+    union Datos {
+        int int_data;
+        flotante real_data;
+    };
+
+    Number total = 42;
+    Decimal money = 35.9f;
+
+    Heroe h;
+    Villain v;
+    h.age = 30;
+    h.puntos = 99;
+    v.hp = 98.6f;
+    v.ki = 7989.9f;
+
+    Datos d;
+    d.int_data = 7;
+
+    C.printf("Total: %d, Money: %.1f, Edad: %d, Puntos: %d, HP: %.1f, Ki: %.1f, Value: %d\n",
+             total, money, h.age, h.puntos, v.hp, v.ki, d.int_data);
+
+    return 0;
+}
